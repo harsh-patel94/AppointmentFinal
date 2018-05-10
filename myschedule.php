@@ -7,12 +7,6 @@
 			<div class="row">
 				
 				<div class="span3">
-					    <ul class="nav nav-tabs nav-stacked">
-							<li class="active">
-							<a href="#"><i class="icon-pencil icon-large"></i>&nbsp;Create Account</a>
-							</li>
-					
-						</ul>
 						<p><strong>Today is:</strong></p>
 				 <div class="alert alert-success">
                         <i class="icon-calendar icon-large"></i>
