@@ -40,7 +40,7 @@
 				<!-- end login -->
 				</div>
 				<div class="span12">
-				<div class="caption_index">we provide the best quality dental service</div>
+				<div class="caption_index">we provide the best dog grooming services</div>
 				</div>		
 				<div class="clearfix"></div>
 			</div>

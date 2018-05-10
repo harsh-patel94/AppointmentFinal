@@ -41,6 +41,8 @@
 	<?php 
 	$member_query = mysqli_query($db,"select * from members where member_id='$session_id'")or die(mysql_error());
 	$member_row= mysqli_fetch_array($member_query);
+	$dog_query = mysqli_query($db, "select * from doginfo where owner_id='$session_id' ")or die(mysql_error());
+	$dog_row = mysqli_fetch_array($dog_query);
 	?>
 	 <form class="form-horizontal" method="POST">
 		<div class="control-group">
@@ -90,6 +92,24 @@
 			</div>
 		</div>
 		<div class="control-group">
+			<label class="control-label" for="inputEmail">Dog name</label>
+			<div class="controls">
+			<input type="text" name="dog_name" value="<?php echo $dog_row['dog_name']; ?>" id="inputEmail" placeholder="dog_name" required>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="inputPassword">Breed</label>
+			<div class="controls">
+			<input type="text" name="breed" value="<?php echo $dog_row['breed']; ?>" id="inputPassword" placeholder="breed" required>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="inputPassword">Dog birthday</label>
+			<div class="controls">
+			<input type="text" name="date_of_birth" value="<?php echo $dog_row['date_of_birth']; ?>" id="inputPassword" placeholder="date_of_birth" required>
+			</div>
+		</div>
+		<div class="control-group">
 			<div class="controls">
 			<button type="submit" name="update" class="btn btn-success"><i class="icon-pencil"></i>&nbsp;Update</button>
 			</div>
@@ -105,9 +125,13 @@
 	$age = $_POST['age'];
 	$gender = $_POST['gender'];
 	$email = $_POST['email'];
+	$dog_name = $_POST['dog_name'];
+	$breed = $_POST['breed'];
+	$date_of_birth = $_POST['date_of_birth'];
 		
 	mysqli_query($db,"update members set firstname='$firstname' , lastname='$lastname' , middlename='$middlename' , address='$address' ,
 	age='$age' , gender='$gender' , email='$email' where member_id='$session_id' ") or die(mysql_error());
+	mysqli_query($db,"update doginfo set dog_name = '$dog_name', breed = '$breed', date_of_birth = '$date_of_birth' where owner_id = '$session_id'") or die(mysql_error());
 	?>
 	<script>
 	window.location = 'edit_info.php'; 
