@@ -14,9 +14,6 @@
 					<li><a rel="tooltip"  data-placement="bottom" title="Contact Us" id="contactus" href="contact_us.php" class=""><i class="icon-phone icon-large"></i>&nbsp;Contact</a></li>
 					
 					</ul>
-					     <form class="navbar-search pull-right">
-    <input type="text" class="search-query" placeholder="Search">
-    </form>
                  
                     </div>
                 </div>
