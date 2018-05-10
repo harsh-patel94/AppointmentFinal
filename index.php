@@ -37,15 +37,6 @@
 				<div class="caption_index">we provide the best dog grooming service</div>
 				</div>		
 				<div class="clearfix"></div>
-				<div class="span12">
-					<?php include('thumbnail.php'); ?>
-				</div>
-				<div class="span12">
-				<?php include('content1.php'); ?>
-				</div>
-				<div class="span12">
-				<?php include('content2.php'); ?>	
-				</div>
 			</div>
 		</div>
     </div>

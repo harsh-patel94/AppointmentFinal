@@ -11,13 +11,6 @@
 		$contact_no=$_POST['contact_no'];
 		$username=$_POST['username'];
 		$password=$_POST['password'];
-		$cpassword=$_POST['cpassword'];
-		
-			if($cpassword!=$password){
-		$a="Password do not Match";
-		}else{
-		$a = "";
-		}
 	}
 	?>
 <form method="post">	
@@ -95,33 +88,6 @@
 			</div>
 		</div>
 		
-	<div class="control-group">
-				<label class="control-label" for="inputEmail"></label>
-				<div class="controls">
-			<script type="text/javascript">
-				jQuery(document).ready(function() {
-					$('#refresh').tooltip('show');
-					$('#refresh').tooltip('hide');
-				})
-			</script>
-				<img  src="generatecaptcha.php?rand=<?php echo rand(); ?>" id='captchaimg' > 
-				<a href='javascript: refreshCaptcha();'><i data-placement="right" id="refresh"  title="Click to Refresh Code" class="icon-refresh icon-large icon-spin"></i></a> 
-				<script language='JavaScript' type='text/javascript'>
-			function refreshCaptcha()
-			{
-				var img = document.images['captchaimg'];
-				img.src = img.src.substring(0,img.src.lastIndexOf("?"))+"?rand="+Math.random()*1000;
-			}
-			</script>
-				
-				</div>
-    </div>
-	
-		    <div class="control-group">
-    <label class="control-label" for="inputPassword">Enter the Code Above</label>
-    <div class="controls">
-    <input id="code" name="code" type="text" placeholder="Enter the Code Above" required></td>
-	
 	<?php 
 
 if(isset($_POST['submit']))
@@ -136,13 +102,9 @@ if(isset($_POST['submit']))
 	$contact_no=$_POST['contact_no'];
 	$username=$_POST['username'];
 	$password=$_POST['password'];
-	$cpassword=$_POST['cpassword'];	
-	if(strcmp($_SESSION['code'], $_POST['code']) != 0)
-	{
 	?>
-	<span class="label label-important">Code Does Not Match</span>
-<?php
-}else if(strcmp($_SESSION['code'], $_POST['code']) == 0 && $password == $cpassword){ ?>
+}
+else if(strcmp($_SESSION['code'], $_POST['code']) == 0 ){ 
 <?php
 	mysqli_query($db, "insert into members (firstname,lastname,age,gender,address,email,contact_no,username,password)
 	values ('$firstname','$lastname','$age','$gender','$address','$email','$contact_no','$username','$password')
@@ -153,19 +115,10 @@ window.location='success.php';
 <?php
 }else{
 echo " ";
-}}
+}
 ?>
     </div>
     </div>
-	
-			<div class="control-group">
-			<label class="control-label" for="inputPassword">Confirm Password</label>
-			<div class="controls">
-			<input type="password" name="cpassword" value="<?php if (isset($_POST['submit'])){echo $cpassword;} ?>" placeholder="Confirm Password" required>
-					<?php if (isset($_POST['submit'])){?> 	<span class="label label-important"><?php echo $a; ?></span><?php }?>
-			</div>
-
-		</div>
 
 		
 		
