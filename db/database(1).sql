@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 10, 2013 at 01:33 AM
+-- Generation Time: Sep 10, 2018 at 01:33 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -17,20 +17,20 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `database`
+-- Database: 'database'
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `members`
+-- Table structure for table 'members'
 --
 
 CREATE TABLE IF NOT EXISTS `members` (
   `member_id` int(11) NOT NULL AUTO_INCREMENT,
   `firstname` varchar(100) NOT NULL,
   `lastname` varchar(100) NOT NULL,
-  `middlename` varchar(100) NOT NULL,
+  `middlename` varchar(100),
   `address` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `contact_no` varchar(100) NOT NULL,
@@ -46,15 +46,27 @@ CREATE TABLE IF NOT EXISTS `members` (
 --
 
 INSERT INTO `members` (`member_id`, `firstname`, `lastname`, `middlename`, `address`, `email`, `contact_no`, `age`, `gender`, `username`, `password`) VALUES
-(1, 'stephanie', 'villanueva', 'batoonq', 'Saraviaq', 'tephvillanueva.jk@gmail.comq', '0946651154', 18, 'Male', 'teph', 'teph'),
-(7, 'john kevin', 'lorayna', '', 'bago city', 'jkevlorayna@gmail.com', '09466651154', 19, 'Male', 'q', 'q'),
-(8, 'testg', 'fasfsg', '', 'bagdahsd', 'kevin_lorayna@yahoo.com', '31289417', 12, 'Female', 'test', 'qwerty'),
-(9, 'jessica', 'bela-ong', '', 'bbasf', 'kasfasfas@yahoo.com', '311fasf', 19, 'Female', 'jessica', '12345');
+(1, 'tom', 'admin', '', 'Melbourne', 'admin@gmail.com', '0434******', 25, 'Male', 'admin', 'admin'),
+(2, 'stephanie', 'villanueva', 'batoonq', 'Saraviaq', 'tephvillanueva.jk@gmail.comq', '0946651154', 18, 'Male', 'teph', 'teph');
 
+
+CREATE TABLE IF NOT EXISTS `doginfo` (
+  `dog_id` int(11) NOT NULL AUTO_INCREMENT,
+  `dog_name` varchar(100) NOT NULL,
+  `breed` varchar(100) NOT NULL,
+  `date_of_birth` varchar(100) NOT NULL,
+  `owner_id` int(11) NOT NULL,
+  PRIMARY KEY (`dog_id`),
+  foreign KEY (`owner_id`) references members (`member_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+
+INSERT INTO `doginfo` (`dog_id`, `dog_name`, `breed`, `date_of_birth`, `owner_id`) VALUES
+(1, 'Spotty', 'Dalmatian', '08/04/2017', 2);
 -- --------------------------------------------------------
 
 --
--- Table structure for table `note`
+-- Table structure for table 'note'
 --
 
 CREATE TABLE IF NOT EXISTS `note` (
@@ -69,12 +81,12 @@ CREATE TABLE IF NOT EXISTS `note` (
 --
 
 INSERT INTO `note` (`note_id`, `date`, `message`) VALUES
-(6, '', 'Doc terry will be  out on august 3 2013');
+(6, '', 'Doc terry will be  out on august 3 2018');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `schedule`
+-- Table structure for table 'schedule'
 --
 
 CREATE TABLE IF NOT EXISTS `schedule` (
@@ -84,7 +96,8 @@ CREATE TABLE IF NOT EXISTS `schedule` (
   `service_id` int(11) NOT NULL,
   `Number` int(11) NOT NULL,
   `status` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  foreign key (`member_id`) references members (`member_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=79 ;
 
 --
@@ -92,14 +105,14 @@ CREATE TABLE IF NOT EXISTS `schedule` (
 --
 
 INSERT INTO `schedule` (`id`, `member_id`, `date`, `service_id`, `Number`, `status`) VALUES
-(76, 1, '11/09/2013', 1, 1, 'Done'),
-(77, 1, '11/09/2013', 1, 1, 'Pending'),
-(78, 1, '10/09/2013', 1, 1, 'Done');
+(76, 2, '11/04/2018', 1, 1, 'Done'),
+(77, 2, '11/04/2018', 1, 1, 'Pending'),
+(78, 2, '10/04/2018', 1, 1, 'Done');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `service`
+-- Table structure for table 'service'
 --
 
 CREATE TABLE IF NOT EXISTS `service` (
@@ -114,20 +127,22 @@ CREATE TABLE IF NOT EXISTS `service` (
 --
 
 INSERT INTO `service` (`service_id`, `service_offer`, `price`) VALUES
-(1, 'Cleaning', 700.00),
-(2, 'q', 100.00);
+(1, 'wash only', 100.00),
+(2, 'wash & nail clipping', 150.00),
+(3, 'deluxe grooming', 300.00);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Table structure for table 'users'
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  PRIMARY KEY (`user_id`)
+  PRIMARY KEY (`user_id`),
+  foreign key (`user_id`) references members (`member_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
@@ -135,9 +150,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `password`) VALUES
-(5, 'admin', 'admin'),
-(9, 'teph', 'teph'),
-(10, 'teph', 'teph');
+(1, 'admin', 'admin'),
+(2, 'teph', 'teph');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
