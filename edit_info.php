@@ -138,9 +138,9 @@
 	<?php
 	}	
 	?>
-
-	
-	
+/*
+	a comment
+*/	
 	
 				</div>
 				<div class="span3">
