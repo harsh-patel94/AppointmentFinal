@@ -56,7 +56,7 @@
                                         <th>Date</th>                                 
                                         <th>Service</th>                                 
                                         <th>Price</th>                                 
-                              
+                              			<th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -79,6 +79,12 @@
                                     <td><?php  echo $row['date'];  ?></td> 
                                     <td><?php  echo $service_row['service_offer'];  ?></td> 
                                     <td><?php  echo $service_row['price'];  ?></td> 
+                                    <td width="100">
+                                        <a rel="tooltip"  title="Delete Appointment" id="<?php echo $id; ?>" class="btn btn-danger"><i class="icon-trash icon-large"></i></a>
+                                        <a rel="tooltip"  title="Edit Appointment" id="e<?php echo $id; ?>" href="#edit<?php echo $id; ?>" data-toggle="modal" class="btn btn-success"><i class="icon-pencil icon-large"></i></a>
+                                   
+									</td>
+									<?php include('toolttip_edit_delete.php'); ?>
                              
 							
 									</tr>
@@ -86,6 +92,26 @@
                            
                                 </tbody>
                             </table>
+
+                            <script type="text/javascript">
+        $(document).ready( function() {
+            $('.btn-danger').click( function() {
+                var id = $(this).attr("id");
+                if(confirm("Are you sure you want to delete this Data?")){
+                    $.ajax({
+                        type: "POST",
+                        url: "delete_appointment.php",
+                        data: ({id: id}),
+                        cache: false,
+                        success: function(html){
+                        $(".del"+id).fadeOut('slow'); 
+                        } 
+                    }); 
+                }else{
+                    return false;}
+            });				
+        });
+    </script>
 
 
 	
