@@ -13,7 +13,7 @@
 					<li><a rel="tooltip"  data-placement="bottom" title="About Us" id="aboutus" href="about.php" class=""><i class="icon-info icon-large"></i>&nbsp;About</a></li>
 					<li><a rel="tooltip"  data-placement="bottom" title="Contact Us" id="contactus" href="contact_us.php" class=""><i class="icon-phone icon-large"></i>&nbsp;Contact</a></li>
 					
-					</ul>
+					</ul>		
                  
                     </div>
                 </div>
