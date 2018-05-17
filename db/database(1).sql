@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `note` (
 --
 
 INSERT INTO `note` (`note_id`, `date`, `message`) VALUES
-(6, '', 'Doc terry will be  out on august 3 2018');
+(6, '', 'Please handle my Puch with care, he can get aggressive');
 
 -- --------------------------------------------------------
 
