@@ -61,6 +61,5 @@
 									<li><a href="service.php"><i class="icon-medkit	icon-large"></i>&nbsp;Service<i class="icon-arrow-right icon-large"></i></a></li>
 									<li><a href="user.php"><i class="icon-user icon-large"></i>&nbsp;User Accounts<i class="icon-arrow-right icon-large"></i></a></li>
 									<li><a href="members.php"><i class="icon-group icon-large"></i>&nbsp;Members<i class="icon-arrow-right icon-large"></i></a></li>
-									<li><a href="note.php"><i class="icon-file icon-large"></i>&nbsp;Note<i class="icon-arrow-right icon-large"></i></a></li>
 								</ul>
 							</div>

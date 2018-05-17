@@ -25,7 +25,6 @@
                                         <th>Contact No</th>                                 
                                         <th>Email Address</th>                                 
                                                                     
-                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -40,36 +39,13 @@
                                     <td><?php echo $row['address']; ?></td> 
                                     <td><?php echo $row['contact_no']; ?></td> 
                                     <td><?php echo $row['email']; ?></td> 
-                                    <td width="50">
-                                        <a rel="tooltip"  title="Delete" id="<?php echo $id; ?>" class="btn btn-danger"><i class="icon-trash icon-large"></i></a>
-                            
-									</td>
-									<?php include('toolttip_edit_delete.php'); ?>
+                                  
 									</tr>
 									<?php } ?>
                            
                                 </tbody>
                             </table>
 							
-<script type="text/javascript">
-        $(document).ready( function() {
-            $('.btn-danger').click( function() {
-                var id = $(this).attr("id");
-                if(confirm("Are you sure you want to delete this Member?")){
-                    $.ajax({
-                        type: "POST",
-                        url: "delete_member.php",
-                        data: ({id: id}),
-                        cache: false,
-                        success: function(html){
-                        $(".del"+id).fadeOut('slow'); 
-                        } 
-                    }); 
-                }else{
-                    return false;}
-            });				
-        });
-    </script>
 
 						</div>
     </div>

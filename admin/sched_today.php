@@ -57,11 +57,8 @@
                                     <td><?php  echo $row['status'];  ?></td> 
                                     <td width="100">
                 
-									   <a rel="tooltip"  title="Edit" id="e<?php echo $id; ?>" href="#edit<?php echo $id; ?>" data-toggle="modal" class="btn btn-success"><i class="icon-pencil icon-large"></i></a>
 									   									   <a  href="update1.php<?php echo '?id='.$id; ?>"  class="btn btn-info"><i class="icon-check icon-large"></i></a>
-                                    <?php include('edit_service.php'); ?>
 									</td>
-									<?php include('toolttip_edit_delete.php'); ?>
 									</tr>
 									<?php } ?>
                            
