@@ -93,7 +93,7 @@
     <div class="controls">
 		<select name="service" required>
 			<option></option>
-		<?php $query=mysqli_query($db, "select * from members")or die(mysql_error());
+		<?php $query=mysqli_query($db, "select * from members where member_id = '$session_id'")or die(mysql_error());
 		while($row=mysqli_fetch_array($query)){
 		?>
 	

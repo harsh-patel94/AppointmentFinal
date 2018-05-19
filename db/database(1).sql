@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table 'members'
 --
-
+DROP TABLE IF EXISTS `members`;
 CREATE TABLE IF NOT EXISTS `members` (
   `member_id` int(11) NOT NULL AUTO_INCREMENT,
   `firstname` varchar(100) NOT NULL,
@@ -38,6 +38,9 @@ CREATE TABLE IF NOT EXISTS `members` (
   `gender` varchar(100) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
+  `dogname` varchar(100) NOT NULL,
+  `dogbreed` varchar(100) NOT NULL,
+  `dogage` varchar(100) NOT NULL,
   PRIMARY KEY (`member_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
@@ -45,11 +48,16 @@ CREATE TABLE IF NOT EXISTS `members` (
 -- Dumping data for table `members`
 --
 
-INSERT INTO `members` (`member_id`, `firstname`, `lastname`, `middlename`, `address`, `email`, `contact_no`, `age`, `gender`, `username`, `password`) VALUES
-(1, 'tom', 'admin', '', 'Melbourne', 'admin@gmail.com', '0434******', 25, 'Male', 'admin', 'admin'),
-(2, 'stephanie', 'villanueva', 'batoonq', 'Saraviaq', 'tephvillanueva.jk@gmail.comq', '0946651154', 18, 'Male', 'teph', 'teph');
+INSERT INTO `members` (`member_id`, `firstname`, `lastname`, `middlename`, `address`, `email`, `contact_no`, `age`, `gender`, `username`, `password`,`dogname`, `dogbreed`, `dogage`) VALUES
+(1, 'tom', 'admin', '', 'Melbourne', 'admin@gmail.com', '0434******', 25, 'Male', 'admin', 'admin','','',''),
+(2, 'stephanie', 'villanueva', 'batoonq', 'Saraviaq', 'tephvillanueva.jk@gmail.comq', '0946651154', 18, 'Male', 'teph', 'teph','Spotty','Dalmatian','2'),
+(3, 'David','Coles','','Carlton','liuj15@student.unimelb.edu.au','0434123456','20','Male','david','123456','Jill','AKITA','1'),
+(4, 'Jack', 'Woolworth', '', 'North Carlton', 'yimingq@student.unimelb.edu.au','0434654321', '21','Male', 'jack', '123456','Q','Basset Hound','3'),
+(5, 'Tony', 'Stark','','Melbourne Central', 'apurushotha@student.unimelb.edu.au', '0434000000', '22', 'Male', 'tony', '123456', 'C', 'Bernese Mountain', '4'),
+(6, 'James', 'Lannister', '', 'Kingslanding', 'harshp@student.unimelb.edu.au', '0434666666', '23', 'Male', 'james', '123456','mountain','Alaskan Malamute', '5');
 
 
+DROP TABLE IF EXISTS `doginfo`;
 CREATE TABLE IF NOT EXISTS `doginfo` (
   `dog_id` int(11) NOT NULL AUTO_INCREMENT,
   `dog_name` varchar(100) NOT NULL,
@@ -68,7 +76,7 @@ INSERT INTO `doginfo` (`dog_id`, `dog_name`, `breed`, `date_of_birth`, `owner_id
 --
 -- Table structure for table 'note'
 --
-
+DROP TABLE IF EXISTS `note`;
 CREATE TABLE IF NOT EXISTS `note` (
   `note_id` int(11) NOT NULL AUTO_INCREMENT,
   `date` varchar(100) NOT NULL,
@@ -88,7 +96,7 @@ INSERT INTO `note` (`note_id`, `date`, `message`) VALUES
 --
 -- Table structure for table 'schedule'
 --
-
+DROP TABLE IF EXISTS `schedule`;
 CREATE TABLE IF NOT EXISTS `schedule` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `member_id` int(11) NOT NULL,
@@ -114,7 +122,7 @@ INSERT INTO `schedule` (`id`, `member_id`, `date`, `service_id`, `Number`, `stat
 --
 -- Table structure for table 'service'
 --
-
+DROP TABLE IF EXISTS `service`;
 CREATE TABLE IF NOT EXISTS `service` (
   `service_id` int(11) NOT NULL AUTO_INCREMENT,
   `service_offer` varchar(100) NOT NULL,
@@ -136,7 +144,7 @@ INSERT INTO `service` (`service_id`, `service_offer`, `price`) VALUES
 --
 -- Table structure for table 'users'
 --
-
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(100) NOT NULL,
