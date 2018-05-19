@@ -26,7 +26,6 @@
                                         <th>Dog Breed </th>  
                                         <th>Dog Age </th>                                    
                                         <th>Status</th>
-                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>

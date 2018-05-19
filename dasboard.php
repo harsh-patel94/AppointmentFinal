@@ -17,15 +17,10 @@
                         ?>
                     </div>		
 				<div class="alert alert-info">Time Guide for Each Number</div>
-						<p>Number 1  - 9:30 - 10:00</p>
-						<p>Number 2  - 10:00 - 10:30</p>
-						<p>Number 3  - 10:30 - 11:00</p>
-						<p>Number 4  - 11:30 - 12:00</p>
-						<p>Number 5  - 12:30 - 1:00</p>
-						
-						<p>Number 6  - 3:00 - 3:30</p>
-						<p>Number 7  - 3:30 - 4:00</p>
-						<p>Number 8  - 4:30 - 5:00</p>
+						<p>Number 1  - 9:30 - 11:00</p>
+						<p>Number 2  - 11:30 - 1:00</p>
+						<p>Number 3  - 1:30 - 3:00</p>
+						<p>Number 4  - 3:30 - 5:00</p>
 
 				</div>
 				<div class="span6">
