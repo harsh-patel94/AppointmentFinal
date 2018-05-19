@@ -59,7 +59,6 @@
 									<li><a href="sched_today.php"><i class="icon-file-alt icon-large"></i>&nbsp;Schedule for Today <i class="icon-arrow-right icon-large"></i></a></li>
 									<li><a href="schedule.php"><i class="icon-list icon-large"></i>&nbsp;Schedule<i class="icon-arrow-right icon-large"></i></a></li>
 									<li><a href="service.php"><i class="icon-medkit	icon-large"></i>&nbsp;Service<i class="icon-arrow-right icon-large"></i></a></li>
-									<li><a href="user.php"><i class="icon-user icon-large"></i>&nbsp;User Accounts<i class="icon-arrow-right icon-large"></i></a></li>
 									<li><a href="members.php"><i class="icon-group icon-large"></i>&nbsp;Members<i class="icon-arrow-right icon-large"></i></a></li>
 								</ul>
 							</div>
