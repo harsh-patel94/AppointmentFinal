@@ -52,7 +52,7 @@
 		<div class="control-group">
 			<label class="control-label" for="inputPassword">Middlename</label>
 			<div class="controls">
-			<input type="text" name="middlename" id="inputPassword" value="<?php echo $member_row['middlename']; ?>" placeholder="Middlename" required>
+			<input type="text" name="middlename" id="inputPassword" value="<?php echo $member_row['middlename']; ?>" placeholder="Middlename">
 			</div>
 		</div>
 		<div class="control-group">
