@@ -22,7 +22,9 @@
                                         <th>Member</th>
                                         <th>Date</th>                                 
                                         <th>Service</th>                                 
-                                        <th>Price</th>                                 
+                                        <th>Price</th> 
+                                        <th>Dog Breed </th>  
+                                        <th>Dog Age </th>                                    
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
@@ -41,11 +43,17 @@
 									$member_id = $row['member_id'];
 									$service_id = $row['service_id'];
 									/* member query  */
-									$member_query = mysql_query("select * from members where member_id = ' $member_id'")or die(mysql_error());
-									$member_row = mysql_fetch_array($member_query);
+									$member_query = mysqli_query($db, "select * from members where member_id = ' $member_id'")or die(mysql_error());
+									$member_row = mysqli_fetch_array($member_query);
 									/* service query  */
-									$service_query = mysql_query("select * from service where service_id = '$service_id' ")or die(mysql_error());
-									$service_row = mysql_fetch_array($service_query);
+									$service_query = mysqli_query($db, "select * from service where service_id = '$service_id' ")or die(mysql_error());
+									$service_row = mysqli_fetch_array($service_query);
+
+									$breed_query = mysqli_query($db, "select * from members where member_id = '$member_id' ")or die(mysql_error());
+									$breed_row = mysqli_fetch_array($breed_query);
+
+									$dogage_query = mysqli_query($db, "select * from members where member_id = '$member_id' ")or die(mysql_error());
+									$dogage_row = mysqli_fetch_array($dogage_query);
 									?>
 									
 									 <tr class="del<?php echo $id ?>">
@@ -54,6 +62,8 @@
                                     <td><?php  echo $row['date'];  ?></td> 
                                     <td><?php  echo $service_row['service_offer'];  ?></td> 
                                     <td><?php  echo $service_row['price'];  ?></td> 
+                                    <td><?php  echo $breed_row['dogbreed'];  ?></td> 
+                                    <td><?php  echo $dogage_row['dogage'];  ?></td> 
                                     <td><?php  echo $row['status'];  ?></td> 
                                     <td width="100">
                 

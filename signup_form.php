@@ -11,6 +11,9 @@
 		$contact_no=$_POST['contact_no'];
 		$username=$_POST['username'];
 		$password=$_POST['password'];
+		$dogname=$_POST['dogname'];
+		$dogbreed=$_POST['dogbreed'];
+		$dogage=$_POST['dogage'];
 	}
 	?>
 <form method="post">	
@@ -19,7 +22,7 @@
 		<div class="control-group">
 			<label class="control-label" for="inputEmail">Name</label>
 			<div class="controls">
-			<input type="text" name="firstname" value="<?php if (isset($_POST['submit'])){echo $firstname;} ?>" placeholder="Firtname" required> 
+			<input type="text" name="firstname" value="<?php if (isset($_POST['submit'])){echo $firstname;} ?>" placeholder="Firstname" required> 
 			<input type="text" name="lastname"  value="<?php if (isset($_POST['submit'])){echo $lastname;} ?>" placeholder="Lastname" required> 
 			<input type="text" name="middlename" value="<?php if (isset($_POST['submit'])){echo $middlename;} ?>" placeholder="Middlename" required> 
 			</div>
@@ -30,8 +33,9 @@
 			<div class="controls">
 			<select name="gender" required>
 			<option><?php if (isset($_POST['submit'])){echo $gender;} ?></option>
-			<option>Male</option>
-			<option>Female</option>
+			<option>MALE</option>
+			<option>FEMALE</option>
+			<option>Prefer not to say</option>
 			</select>
 			</div>
 		</div>
@@ -87,7 +91,36 @@
 			<input name="email" type="text" value="<?php if (isset($_POST['submit'])){echo $email;} ?>" placeholder="Email Address" required> 
 			</div>
 		</div>
-		
+			<div class="control-group">
+			<label class="control-label" for="inputPassword">Dog Name</label>
+			<div class="controls">
+			<input name="dogname" type="text" value="<?php if (isset($_POST['submit'])){echo $dogname;} ?>" placeholder="Your Dog's Name" required> 
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="inputPassword">Dog Breed</label>
+			<div class="controls">
+			<select name="dogbreed" required>
+			<option><?php if (isset($_POST['submit'])){echo $dogbreed;} ?></option>
+			<option>AIREDALE TERRIER</option>
+			<option>AKITA</option>
+			<option>ALASKAN MALAMUTE</option>
+			<option>AUSTRALIAN SHEPHERD</option>
+			<option>BASSET HOUND</option>
+			<option>BERNESE MOUNTAIN DOG</option>
+			</select>
+		    </div>
+		</div>
+
+			<div class="control-group">
+			<label class="control-label" for="inputPassword">Dog Age</label>
+			<div class="controls">
+			<input name="dogage" type="text" value="<?php if (isset($_POST['submit'])){echo $dogage;} ?>" placeholder="Your Dog's Age" required> 
+			</div>
+		</div>
+
+			</div>
 	<?php 
 
 if(isset($_POST['submit']))
@@ -102,19 +135,22 @@ if(isset($_POST['submit']))
 	$contact_no=$_POST['contact_no'];
 	$username=$_POST['username'];
 	$password=$_POST['password'];
+	$dogname=$_POST['dogname'];
+	$dogbreed=$_POST['dogbreed'];
+	$dogage=$_POST['dogage'];
 	?>
 }
-else if(strcmp($_SESSION['code'], $_POST['code']) == 0 ){ 
+else if(strcmp($_SESSION['code'], $_POST['code']) == 0 ){ ?>
 <?php
-	mysqli_query($db, "insert into members (firstname,lastname,age,gender,address,email,contact_no,username,password)
-	values ('$firstname','$lastname','$age','$gender','$address','$email','$contact_no','$username','$password')
+	mysqli_query($db, "insert into members (firstname,lastname,age,gender,address,email,contact_no,username,password,dogname,dogbreed,dogage)
+	values ('$firstname','$lastname','$age','$gender','$address','$email','$contact_no','$username','$password','$dogname','$dogbreed','$dogage')
 	")or die(mysql_error());?>
 <script type="text/javascript">
 window.location='success.php';
 </script>
 <?php
 }else{
-echo " ";
+echo "";
 }
 ?>
     </div>

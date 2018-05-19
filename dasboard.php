@@ -33,7 +33,7 @@
 					<br>
 					<br>
 					
-				<div class="alert alert-info">Select Date of Appointment and Service Offer</div>
+				<div class="alert alert-info">Book your Appoitment</div>
 	
 		<!-- reservation -->
 		<?php
@@ -72,12 +72,42 @@
 	<!-- end reservation -->
 	
 	<form class="form-horizontal" method="POST">
-    <div class="control-group">
+
+		<div class="control-group">
     <label class="control-label" for="inputEmail">Date</label>
     <div class="controls">
     <input type="text"  class="w8em format-d-m-y highlight-days-67 range-low-today" name="date" id="sd" maxlength="10" style="border: 3px double #CCCCCC;" required/>
     </div>
     </div>
+
+		<div class="control-group">
+			<label class="control-label" for="inputPassword">Time Slot</label>
+			<div class="controls">
+			<select name="dogbreed" required>
+			<option></option>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			</select>
+		    </div>
+		</div>
+
+	  <div class="control-group">
+    <label class="control-label" for="inputPassword">Your Dog</label>
+    <div class="controls">
+		<select name="service" required>
+			<option></option>
+		<?php $query=mysqli_query($db, "select * from members")or die(mysql_error());
+		while($row=mysqli_fetch_array($query)){
+		?>
+	
+		<option value="<?php echo $row['member_id']; ?>"><?php echo $row['dogname'] ?></option>
+		<?php } ?>
+		</select>
+    </div>
+    </div>
+
     <div class="control-group">
     <label class="control-label" for="inputPassword">Service</label>
     <div class="controls">

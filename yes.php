@@ -48,7 +48,7 @@
 		$equal = $_POST['equal'];
 		mysqli_query($db, "insert into schedule (member_id,date,service_id,number,status) values('$session_id','$date1','$service1','$equal','Pending')")or die(mysql_error());
 		?>
-		<div class="yes"><h4>Your appointment has been set on  <?php echo  $date1; ?>. THANK YOU</h4></div>
+		<div class="yes"><h6>Your appointment has been set on <?php echo  $date1; ?>. THANK YOU</h6></div>
 		<?php }else{ ?>
 		<script>
 		alert('error');

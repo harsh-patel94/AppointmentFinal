@@ -17,18 +17,17 @@
                         ?>
                     </div>	
 		<div class="alert alert-info">Time Guide for Each Number</div>
-						<p>Number 1  - 9:30 - 10:00</p>
-						<p>Number 2  - 10:00 - 10:30</p>
-						<p>Number 3  - 10:30 - 11:00</p>
-						<p>Number 4  - 11:30 - 12:00</p>
-						<p>Number 5  - 12:30 - 1:00</p>
+						<p>Number 1  - 9:30 - 11:00</p>
+						<p>Number 2  - 11:00 - 12:30</p>
+						<p>Number 3  - 12:30 - 13:00</p>
+
+						<p>Number 4  - 13:30 - 15:00</p>
+						<p>Number 5  - 15:00 - 16:30</p>
 						
-						<p>Number 6  - 3:00 - 3:30</p>
+						<p>Number 6  - 16:30 - 18:00</p>
 						<p>Number 7  - 3:30 - 4:00</p>
 						<p>Number 8  - 4:30 - 5:00</p>
 				
-						
-					
 				<div class="alert alert-info"></div>
 					
 					
@@ -41,8 +40,6 @@
 	<?php 
 	$member_query = mysqli_query($db,"select * from members where member_id='$session_id'")or die(mysql_error());
 	$member_row= mysqli_fetch_array($member_query);
-	$dog_query = mysqli_query($db, "select * from doginfo where owner_id='$session_id' ")or die(mysql_error());
-	$dog_row = mysqli_fetch_array($dog_query);
 	?>
 	 <form class="form-horizontal" method="POST">
 		<div class="control-group">
@@ -86,27 +83,37 @@
 			<div class="controls">
 			<select class="span2" name="gender" required>
 			<option><?php echo $member_row['gender']; ?></option>
-			<option>Male</option>
-			<option>Female</option>
+			<option>MALE</option>
+			<option>FEMALE</option>
 			</select>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label" for="inputEmail">Dog name</label>
 			<div class="controls">
-			<input type="text" name="dog_name" value="<?php echo $dog_row['dog_name']; ?>" id="inputEmail" placeholder="dog_name" required>
+			<input type="text" name="dogname" value="<?php echo $member_row['dogname']; ?>" id="inputEmail" placeholder="dog_name" required>
 			</div>
 		</div>
+
 		<div class="control-group">
-			<label class="control-label" for="inputPassword">Breed</label>
+			<label class="control-label" for="inputPassword">Dog Breed</label>
 			<div class="controls">
-			<input type="text" name="breed" value="<?php echo $dog_row['breed']; ?>" id="inputPassword" placeholder="breed" required>
-			</div>
+			<select name="dogbreed" required>
+			<option><?php echo $member_row['dogbreed']; ?></option>
+			<option>AIREDALE TERRIER</option>
+			<option>AKITA</option>
+			<option>ALASKAN MALAMUTE</option>
+			<option>AUSTRALIAN SHEPHERD</option>
+			<option>BASSET HOUND</option>
+			<option>BERNESE MOUNTAIN DOG</option>
+			</select>
+		    </div>
 		</div>
+
 		<div class="control-group">
-			<label class="control-label" for="inputPassword">Dog birthday</label>
+			<label class="control-label" for="inputPassword">Dog Age</label>
 			<div class="controls">
-			<input type="text" name="date_of_birth" value="<?php echo $dog_row['date_of_birth']; ?>" id="inputPassword" placeholder="date_of_birth" required>
+			<input type="text" name="dogage" value="<?php echo $member_row['dogage']; ?>" id="inputPassword" placeholder="date_of_birth" required>
 			</div>
 		</div>
 		<div class="control-group">
@@ -125,13 +132,12 @@
 	$age = $_POST['age'];
 	$gender = $_POST['gender'];
 	$email = $_POST['email'];
-	$dog_name = $_POST['dog_name'];
-	$breed = $_POST['breed'];
-	$date_of_birth = $_POST['date_of_birth'];
+	$dogname = $_POST['dogname'];
+	$dogbreed = $_POST['dogbreed'];
+	$dogage = $_POST['dogage'];
 		
 	mysqli_query($db,"update members set firstname='$firstname' , lastname='$lastname' , middlename='$middlename' , address='$address' ,
-	age='$age' , gender='$gender' , email='$email' where member_id='$session_id' ") or die(mysql_error());
-	mysqli_query($db,"update doginfo set dog_name = '$dog_name', breed = '$breed', date_of_birth = '$date_of_birth' where owner_id = '$session_id'") or die(mysql_error());
+	age='$age' , gender='$gender' , email='$email' , dogname ='$dogname' , dogbreed ='$dogbreed', dogage = '$dogage'   where member_id='$session_id' ") or die(mysql_error());
 	?>
 	<script>
 	window.location = 'edit_info.php'; 
