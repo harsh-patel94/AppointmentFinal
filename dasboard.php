@@ -26,14 +26,7 @@
 						<p>Number 6  - 3:00 - 3:30</p>
 						<p>Number 7  - 3:30 - 4:00</p>
 						<p>Number 8  - 4:30 - 5:00</p>
-				
-						
-							
-				<div class="alert alert-info"></div>
-					
-					
-					
-				<div class="alert alert-info"></div>
+
 				</div>
 				<div class="span6">
 					<img src="img/top-dog-banner-1.jpg">
@@ -107,14 +100,25 @@
     </form>
 	
 
-	
-	
-	
 				</div>
 				<div class="span3">
+		<div class="alert alert-info">Note to the Groomer</div>
+					<?php $user_query=mysqli_query($db, "select * from note")or die(mysql_error());
+									while($row=mysqli_fetch_array($user_query)){
+									$id=$row['note_id']; ?>
+			
+                                    <td><?php echo $row['message']; ?></td> 
+                                    <td width="100">
+                       
+									   <a rel="tooltip"  title="Edit" id="e<?php echo $id; ?>" href="#edit<?php echo $id; ?>" data-toggle="modal" class="btn btn-success"><i class="icon-pencil icon-large"></i></a>
+                                    <?php include('edit_note.php'); ?>
+									</td>
+									<?php include('toolttip_edit_delete.php'); ?>
+									</tr>
+									<?php } ?>
 				    <ul class="nav nav-list">
+				    		 
 				<?php
-			 
 				?>
 				</ul>
 				<br>
@@ -131,7 +135,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-								 
+							
                                   <?php $user_query=mysqli_query($db, "select * from service")or die(mysql_error());
 									while($row=mysqli_fetch_array($user_query)){
 									$id=$row['service_id']; ?>

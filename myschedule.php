@@ -75,10 +75,13 @@
                                     <td><?php  echo $service_row['price'];  ?></td> 
                                     <td width="100">
                                         <a rel="tooltip"  title="Delete Appointment" id="<?php echo $id; ?>" class="btn btn-danger"><i class="icon-trash icon-large"></i></a>
+
                                         <a rel="tooltip"  title="Edit Appointment" id="e<?php echo $id; ?>" href="#edit<?php echo $id; ?>" data-toggle="modal" class="btn btn-success"><i class="icon-pencil icon-large"></i></a>
                                    
 									</td>
 									<?php include('toolttip_edit_delete.php'); ?>
+									
+
                              
 							
 									</tr>
@@ -101,6 +104,27 @@
                         $(".del"+id).fadeOut('slow'); 
                         } 
                     }); 
+                }else{
+                    return false;}
+            });				
+        });
+    </script>
+
+                                <script type="text/javascript">
+        $(document).ready( function() {
+            $('.btn-success').click( function() {
+                var id = $(this).attr("id");
+                if(confirm("Your Appointment will be deleted and you will be redirected to make a new one")){
+                    $.ajax({
+                        type: "POST",
+                        url: "dasboard.php",
+                        data: ({id: id}),
+                        cache: false,
+                        success: function(html){
+                        $(".del"+id).fadeOut('slow'); 
+                        } 
+                    }); 
+                    window.location = "dasboard.php"
                 }else{
                     return false;}
             });				

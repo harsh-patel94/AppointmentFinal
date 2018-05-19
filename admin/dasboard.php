@@ -13,5 +13,33 @@
 								<img src="../img/top-dog-banner-1.jpg">
 							</div>
 						</div>
+
     </div>
+    <div class="control-group">
+				<div class="controls">
+				<href="#sendmail" button name="submit" type="submit" class="btn btn-success"></i>&nbsp;Send Email</button>
+	
+			</div>
+
+
+
+			<script type="text/javascript">
+        $(document).ready( function() {
+            $('.btn-success').click( function() {
+                var id = $(this).attr("id");
+                if(confirm("Automated email sent!")){
+                    $.ajax({
+                        type: "POST",
+                        url: "send_email.php",
+                        data: ({id: id}),
+                        cache: false,
+                        success: function(html){
+                        $(".del"+id).fadeOut('slow'); 
+                        } 
+                    }); 
+                }else{
+                    return false;}
+            });				
+        });
+    </script>
 <?php include('footer.php') ?>
