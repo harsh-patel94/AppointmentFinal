@@ -24,7 +24,6 @@
                                         <th>Service</th>                                 
                                         <th>Price</th>                                 
                                         <th>Status</th>
-                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
