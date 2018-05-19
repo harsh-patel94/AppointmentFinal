@@ -16,17 +16,12 @@
                         echo $new;
                         ?>
                     </div>	
-		<div class="alert alert-info">Time Guide for Each Number</div>
+			<div class="alert alert-info">Time Guide for Each Number</div>
 						<p>Number 1  - 9:30 - 11:00</p>
-						<p>Number 2  - 11:00 - 12:30</p>
-						<p>Number 3  - 12:30 - 13:00</p>
+						<p>Number 2  - 11:30 - 1:00</p>
+						<p>Number 3  - 1:30 - 3:00</p>
+						<p>Number 4  - 3:30 - 5:00</p>
 
-						<p>Number 4  - 13:30 - 15:00</p>
-						<p>Number 5  - 15:00 - 16:30</p>
-						
-						<p>Number 6  - 16:30 - 18:00</p>
-						<p>Number 7  - 3:30 - 4:00</p>
-						<p>Number 8  - 4:30 - 5:00</p>
 				
 				<div class="alert alert-info"></div>
 					
