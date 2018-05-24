@@ -115,7 +115,8 @@ CREATE TABLE IF NOT EXISTS `schedule` (
 INSERT INTO `schedule` (`id`, `member_id`, `date`, `service_id`, `Number`, `status`) VALUES
 (76, 2, '11/04/2018', 1, 1, 'Done'),
 (77, 2, '11/04/2018', 1, 1, 'Pending'),
-(78, 2, '10/04/2018', 1, 1, 'Done');
+(78, 3, '10/04/2018', 1, 1, 'Done'),
+(79, 2, '25/05/2018', 3, 2, 'Coming');
 
 -- --------------------------------------------------------
 

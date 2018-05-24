@@ -5,7 +5,7 @@
     <div class="container">
 		<div class="margin-top">
 			<div class="row">
-				
+		</SCRIPT>	
 				<div class="span3">
 						<p><strong>Today is:</strong></p>
 				 <div class="alert alert-success">
