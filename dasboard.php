@@ -8,14 +8,14 @@
 				
 				<div class="span3">
 						<p><strong>Today is:</strong></p>
-				 <div class="alert alert-success">
+				 <div class="alert alert-info">
                         <i class="icon-calendar icon-large"></i>
                         <?php
-                        $Today = date('d:m:y');
-                        $new = date('l, F d, Y', strtotime($Today));
+                        $Today = date('y:m:d');
+                        $new = date(' d/m/Y', strtotime($Today));
                         echo $new;
                         ?>
-                    </div>		
+                    </div>
 				<div class="alert alert-info">Time Guide for Each Number</div>
 						<p>Number 1  - 9:30 - 11:00</p>
 						<p>Number 2  - 11:30 - 1:00</p>
