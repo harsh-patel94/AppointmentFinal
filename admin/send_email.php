@@ -9,13 +9,13 @@ $mail = new PHPMailer;
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'zoomngrooma011@gmail.com';                 // SMTP username
-$mail->Password = 'qwerty.123456';                           // SMTP password
+$mail->Username = 'sculiujia@gmail.com';                 // SMTP username
+$mail->Password = 'Ww092011';                           // SMTP password
 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 587;                                    // TCP port to connect to
 
-$mail->setFrom('harsh.harsh.94@gmail.com', 'Zoom N Groom');
-$mail->addAddress('harsh.harsh.94@gmail.com', 'Customer');     // Add a recipient
+$mail->setFrom('sculiujia@gmail.com', 'Zoom N Groom');
+$mail->addAddress('liuj15@student.unimelb.edu.au', 'Customer');     // Add a recipient
 // $mail->addAddress('ellen@example.com');               // Name is optional
 // $mail->addReplyTo('info@example.com', 'Information');
 // $mail->addCC('cc@example.com');
@@ -26,7 +26,7 @@ $mail->addAddress('harsh.harsh.94@gmail.com', 'Customer');     // Add a recipien
 $mail->isHTML(true);                                  // Set email format to HTML
 
 $mail->Subject = 'Zoom N Groom Appoitment Reminder';
-$mail->Body    = 'Dear customer,<br> This is a reminder for your appotintment <b>at 9.00AM</b>';
+$mail->Body    = 'Dear customer,<br> This is a reminder for your appotintment <b>at 11.30AM</b> today';
 // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
 if(!$mail->send()) {
